@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next Wave - AI & ML Services</title>
+
+  <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Empowering businesses with innovative AI, ML, and chatbot solutions.">
+  <meta name="keywords" content="AI, Machine Learning, Chatbots, Generative AI, Python Development">
+  <meta name="robots" content="index, follow">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #1a5f7a;
+      --secondary-color: #2c3e50;
+      --accent-color: #e67e22;
+      --light-bg: #f8f9fa;
+      --dark-bg: #2c3e50;
+      --text-color: #333;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.8;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 15px 0;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .navbar a {
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--secondary-color);
+      transition: color 0.3s;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .navbar a:hover {
+      color: var(--primary-color);
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/banner.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .btn-custom {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.3s;
+      letter-spacing: 1px;
+    }
+
+    .btn-custom:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+
+    .service-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 40px;
+      margin-bottom: 30px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .service-card img {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+
+    .projects {
+      background-color: var(--dark-bg);
+      color: white;
+    }
+
+    .project-item {
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: all 0.3s;
+      height: 100%;
+    }
+
+    .project-item:hover {
+      background-color: rgba(255,255,255,0.2);
+      transform: scale(1.05);
+    }
+
+    .project-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--accent-color);
+    }
+
+    .project-item p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .contact {
+      background-color: var(--light-bg);
+    }
+
+    .contact-info {
+      background-color: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .contact-info p {
+      margin-bottom: 20px;
+    }
+
+    .contact-info i {
+      color: var(--primary-color);
+      margin-right: 10px;
+    }
+
+    .social-icons a {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent-color);
+    }
+
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .section {
+        padding: 60px 0;
+      }
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo.svg" alt="Next Wave Logo">
+      <span>Next Wave</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1>Empower Your Business with AI & ML Solutions</h1>
+    <p>Unlock new opportunities with next-generation technology</p>
+    <a href="#services" class="btn btn-custom">Explore Services</a>
+  </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>About Us</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <p>At Next Wave, we deliver cutting-edge AI and ML solutions designed to enhance business processes, drive growth, and create competitive advantages for our clients worldwide. With a team of expert developers and data scientists, we're committed to pushing the boundaries of what's possible with artificial intelligence, ensuring your business stays at the forefront of technological innovation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="section bg-light">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Services</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="service-card text-center">
+          <img src="images/generative_ai.png" alt="Generative AI" class="mb-4">
+          <h3>Generative AI</h3>
+          <p>Harness the power of AI to create content, automate processes, and revolutionize your production workflows. Our generative AI solutions adapt to your specific needs, providing innovative ways to enhance creativity and efficiency.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="service-card text-center">
+          <img src="images/chatbot.png" alt="Chatbot Development" class="mb-4">
+          <h3>Chatbot Development</h3>
+          <p>Engage customers 24/7 with intelligent chatbots that learn and improve over time. Our chatbots are designed to understand context, provide accurate information, and seamlessly handle customer inquiries, improving response times and satisfaction.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="service-card text-center">
+          <img src="images/machine.png" alt="Machine Learning" class="mb-4">
+          <h3>Machine Learning</h3>
+          <p>Leverage advanced algorithms to analyze data, predict trends, and gain actionable insights. Our machine learning solutions are tailored to your industry, giving you a competitive edge by uncovering patterns and opportunities hidden in your data.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section projects">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Projects</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="project-item">
+          <h3>📊 Real Estate Data RAG Chatbot</h3>
+          <p>An AI-powered chatbot that provides instant property insights and recommendations. This innovative solution combines Retrieval-Augmented Generation (RAG) with real estate data to offer personalized property suggestions and market analysis.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="project-item">
+          <h3>❤️ Heart Risk Prediction App</h3>
+          <p>A sophisticated machine learning model that assesses cardiovascular health risks with high accuracy. By analyzing various health metrics and lifestyle factors, this app provides early warnings and personalized recommendations for heart health.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="project-item">
+          <h3>📧 Email Management Automation</h3>
+          <p>An AI-driven system that revolutionizes email handling by automatically categorizing, prioritizing, and responding to emails. This solution significantly reduces manual email management time and improves overall communication efficiency.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <div class="contact-info text-center">
+          <p><i class="fas fa-envelope"></i> <a href="mailto:abdullahcodewizard@gmail.com">abdullahcodewizard@gmail.com</a></p>
+          <p><i class="fas fa-phone"></i> <a href="tel:+923284119134">+923284119134</a></p>
+          <div class="social-icons mt-4">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Next Wave. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
